@@ -22,9 +22,12 @@ export default function App() {
       .then(res => {
         //   console.log(res.hits)
           updataIngredients(res.hits)
+        setLoader(false)
+
       })
       .catch(err => {
-        console.log(err);
+        console.log(err) 
+        setLoader(false)
     })
   }
   useEffect(() => {
@@ -35,10 +38,11 @@ export default function App() {
     <>
     <div className = "App">
         <header className="appHeader">
-        <div>
+        <div className="btn">
         <input ref={inputRef} placeholder="Search Recipe"/>
-        <button className="btn"onClick={userQuery}>Search</button>
+        <button onClick={userQuery}>Search</button>
         </div>
+        {loader && <p>wait....</p>}
         <div className="container">
             {ingredients.map(({recipe}, index) => {
                 return (
