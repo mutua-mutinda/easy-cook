@@ -1,13 +1,20 @@
-import React , {useEffect, useState}from "react";
+import React , {useEffect, useState, useRef } from "react";
 import "./styles.css";
 
 
 export default function App() {
-    const [ingredients, updataIngredients] = useState([])
+  const [ingredients, updataIngredients] = useState([])
+  const [loader, setLoader] = useState(false)
   const API_KEY = "2c45eb92d9e21958b2c15e48c4eff6a1";
   const API_ID = "c75e7d95";
-  useEffect(() => {
-    let url = `search?q=beef&app_id=${API_ID}&app_key=${API_KEY}`;
+  const inputRef = useRef(null)
+
+  const userQuery = () =>  {
+      recipeSearch(inputRef.current.value)
+  }
+  const recipeSearch = (search) => {
+      setLoader(true)
+    let url = `search?q=${search}&app_id=${API_ID}&app_key=${API_KEY}`;
     fetch(url, {mode: "no-cors"})
         .then(response => {
         return response.json();
@@ -19,15 +26,19 @@ export default function App() {
       .catch(err => {
         console.log(err);
     })
+  }
+  useEffect(() => {
+    recipeSearch('beef')
   },[]);
 
-//   <input type="text" placeholder="Search Recipe"/>
-//   <button className="btn">Search</button>
-//   </div>
   return (
     <>
     <div className = "App">
         <header className="appHeader">
+        <div>
+        <input ref={inputRef} placeholder="Search Recipe"/>
+        <button className="btn"onClick={userQuery}>Search</button>
+        </div>
         <div className="container">
             {ingredients.map(({recipe}, index) => {
                 return (

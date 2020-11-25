@@ -36,7 +36,8 @@
 .recipe:hover {
   width: 225px;
   height: 265px;
-  transition: 0.1s;
+  transition: 0.4s;
+  visibility: initial;
 }
 
 .recipe p {
@@ -58,17 +59,27 @@
 }
 
 .picks {
-  overflow-y: scroll;
+  position: relative;
+  overflow-y: auto;
+  top: 30px;
+  visibility: hidden;
+  transition: 0.5s;
+  opacity: 0;
 }
 
-.header {
+.recipe:hover .picks {
+  visibility: initial;
+  top: 0;
+  opacity: 1;
+}
+.appHeader {
   margin: 0 54px;
 }
-.header input {
+.appHeader input {
   width: 200px;
   height: 25px;
 }
-.header .btn {
+.appHeader .btn {
   margin-left: 10px;
 }
 .btn {
