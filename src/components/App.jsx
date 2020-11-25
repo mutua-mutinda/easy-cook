@@ -10,7 +10,8 @@ export default function App() {
   const inputRef = useRef(null)
 
   const userQuery = () =>  {
-      recipeSearch(inputRef.current.value)
+      recipeSearch(inputRef.current.value);
+      inputRef.current.value = '';
   }
   const recipeSearch = (search) => {
       setLoader(true)
@@ -42,17 +43,17 @@ export default function App() {
         <input ref={inputRef} placeholder="Search Recipe"/>
         <button onClick={userQuery}>Search</button>
         </div>
-        {loader && <p>wait....</p>}
+        {loader && <span>wait....</span>}
         <div className="container">
-            {ingredients.map(({recipe}, index) => {
+            {ingredients.map(({recipe}) => {
                 return (
-                    <div key={index} className="recipe">
+                    <div key={recipe.label} className="recipe">
                         <legend> calories: {Math.floor(recipe.calories)}</legend>
                     <span>{recipe.label}</span>
                     <img src={recipe.image} alt="#"></img>
                     <div className="picks">
                         {recipe.ingredientLines.map((step, index) => {
-                            return <p type="i">{step}</p>
+                            return <p key={index}>{step}</p>
                         })}
                     </div>
                     </div>

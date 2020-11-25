@@ -11,7 +11,7 @@
   font-size: cal(10px + 2vmin);
   color: #fff;
 }
-.appHeader p {
+.appHeader span {
   font-size: 30px;
   font-weight: 500;
   color: #ff32d2;
@@ -91,12 +91,11 @@
 
 .btn button {
   width: 80px;
-  height: 40px;
+  height: 45px;
   border-radius: 20px;
   border: 0;
-  box-shadow: 0 5px 2px 0 rgba(190, 20, 190, 0.5);
   padding: 10px;
+  outline: none;
   margin: 20px;
   cursor: pointer;
-  justify-content: center;
 }
