@@ -3,7 +3,7 @@
   text-align: center;
 }
 .App {
-  background: #13df6f;
+  /* background: #13df6f; */
   position: relative;
   min-height: 100vh;
   display: flex;
