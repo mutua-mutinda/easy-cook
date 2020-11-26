@@ -21,14 +21,13 @@ export default function App() {
         return response.json();
       })
       .then(res => {
-        //   console.log(res.hits)
-          updataIngredients(res.hits)
-        setLoader(false)
+          updataIngredients(res.hits);
+        setLoader(false);
 
       })
       .catch(err => {
-        console.log(err) 
-        setLoader(false)
+        console.log(err) ;
+        setLoader(false);
     })
   }
   useEffect(() => {
