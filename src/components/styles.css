@@ -1,9 +1,9 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  background-color: #31a5da;
 }
 .App {
-  /* background: #13df6f; */
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -14,7 +14,6 @@
 .appHeader span {
   font-size: 30px;
   font-weight: 500;
-  color: #ff32d2;
 }
 .container {
   display: flex;
