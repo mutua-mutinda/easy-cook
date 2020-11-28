@@ -1,7 +1,6 @@
 {
   "name": "easy-cook",
   "version": "0.1.0",
-  "homepage": "https://mutua-mutinda/github.io/easy-cook",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
@@ -16,9 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -38,8 +35,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://api.edamam.com/",
-  "devDependencies": {
-    "gh-pages": "^3.1.0"
-  }
+  "proxy": "https://api.edamam.com/"
+ 
 }
