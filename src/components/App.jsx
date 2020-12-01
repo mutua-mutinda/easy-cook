@@ -15,9 +15,9 @@ export default function App() {
   }
  
   const recipeSearch = (search) => {
-    if(search === null) {
-      return;
-    }
+    // if(search === null) {
+    //   return;
+    // }
     setLoader(true)
     let url = `search?q=${search}&app_id=${API_ID}&app_key=${API_KEY}`;
     fetch(url, {mode: "no-cors"})
