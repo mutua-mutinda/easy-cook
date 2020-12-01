@@ -13,8 +13,12 @@ export default function App() {
       recipeSearch(inputRef.current.value);
       inputRef.current.value = '';
   }
+ 
   const recipeSearch = (search) => {
-      setLoader(true)
+    if(search === null) {
+      return;
+    }
+    setLoader(true)
     let url = `search?q=${search}&app_id=${API_ID}&app_key=${API_KEY}`;
     fetch(url, {mode: "no-cors"})
         .then(response => {
@@ -42,7 +46,7 @@ export default function App() {
         <input ref={inputRef} placeholder="Search Recipe"/>
         <button onClick={userQuery}>Search</button>
         </div>
-        {loader && <span>wait....</span>}
+         {loader && <span>wait....</span>}
         <div className="container">
             {ingredients.map(({recipe}) => {
                 return (
@@ -61,6 +65,6 @@ export default function App() {
         </div>
         </header>
         </div>
-      </>
+        </>
   );
 }
