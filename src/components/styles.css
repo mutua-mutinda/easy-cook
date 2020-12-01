@@ -15,15 +15,12 @@
   color: #fff;
 }
 .appHeader legend {
-  /* font-size: 30px;
-  font-weight: 500; */
   background: #ff32d2;
 }
 .appHeader span {
   font-size: 40px;
   font-weight: 500;
   color: #fff;
-  /* background: #fff; */
 }
 .container {
   display: flex;
@@ -38,21 +35,16 @@
   padding: 20px;
   flex-direction: column;
   display: flex;
-  flex: 1 1 150px;
-  flex: 0 1 150px;
+  flex: 1 1 200px;
+  flex: 1 1 200px;
   justify-content: space-between;
   align-items: center;
   background: #ff32d2;
   border-radius: 9px;
   box-shadow: 0 5px 2px 0 rgba(190, 20, 190, 0.5);
-  /* transition: 0.1s; */
 }
 
 .recipe:hover {
-  /* margin: 25px; */
-  /* width: 225px; */
-  /* height: 265px; */
-  /* transition: 0.4s; */
   visibility: initial;
 }
 
